@@ -63,7 +63,7 @@ def compute_model_output(x, w, b):
     return f_wb
 
 tmp_f_wb = compute_model_output(x_train, w, b,)
-print(tmp_f_wb)
+#print(tmp_f_wb)
 J = cost_function(w,b,x_train,y_train)
 
 
@@ -103,10 +103,10 @@ w_final, b_final, J_hist, p_hist = gradient_descent(alpha, w_in,b_in,x_train,y_t
 print(f"(w,b) found by gradient descent: ({w_final},{b_final})")
 
 plt.subplot(1,2,1)
-plt.plot(x_train, tmp_f_wb, c='b',label='Our Prediction')
-plt.plot()
-
-plt.scatter(x_train, y_train, marker='x', c='r',label='Actual Values')
+plt.plot(x_train, tmp_f_wb, c='b',label='Our Prediction',lw=0.5)
+plt.plot(x_train,[w_final*x_train[i]+b_final for i in range(1000)], label='Best fit',color='g',lw=1)
+plt.legend()
+plt.scatter(x_train, y_train, marker='x', c='r',label='Actual Values',lw=0.5)
 plt.grid()
 
 
