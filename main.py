@@ -107,6 +107,9 @@ plt.plot(x_train, tmp_f_wb, c='b',label='Our Prediction',lw=0.5)
 plt.plot(x_train,[w_final*x_train[i]+b_final for i in range(1000)], label='Best fit',color='g',lw=1)
 plt.legend()
 plt.scatter(x_train, y_train, marker='x', c='r',label='Actual Values',lw=0.5)
+plt.xlabel("Temperature (C)")
+plt.ylabel("Salinity")
+plt.title("Temperature vs Salinity")
 plt.grid()
 
 
@@ -125,4 +128,7 @@ for i in range(tmp_w.shape[0]):
 plt.subplot(1,2,2)
 plt.contour(tmp_w, tmp_b, np.log(z),levels=12, linewidths=2, alpha=0.7,colors=dlcolors)
 plt.grid()
+plt.xlabel('w')
+plt.ylabel('b')
+plt.title("Contour plot")
 plt.show()
